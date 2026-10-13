@@ -1,8 +1,11 @@
+export type SuiteCategory = "Standart" | "Süit & Premium";
+
 export interface Suite {
   id: string;
   slug: string;
   name: string;
   title: string;
+  category: SuiteCategory;
   price: number;
   currency: string;
   pricePeriod: string;
@@ -25,6 +28,7 @@ export const SUITES: Suite[] = [
     slug: "standart-oda",
     name: "Standart Oda",
     title: "Standart Oda",
+    category: "Standart",
     price: 1750,
     currency: "TL",
     pricePeriod: "gece",
@@ -58,6 +62,7 @@ export const SUITES: Suite[] = [
     slug: "deluks-suit",
     name: "Delüks Süit",
     title: "Delüks Süit",
+    category: "Süit & Premium",
     price: 2850,
     currency: "TL",
     pricePeriod: "gece",
@@ -93,6 +98,7 @@ export const SUITES: Suite[] = [
     slug: "vip-piar-suit",
     name: "VIP PiAR Süit",
     title: "VIP PiAR Süit",
+    category: "Süit & Premium",
     price: 4750,
     currency: "TL",
     pricePeriod: "gece",
