@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import HakkimizdaSection from "@/components/HakkimizdaSection";
 import SuitlerSection from "@/components/SuitlerSection";
-import HizmetlerSection from "@/components/HizmetlerSection";
+import HakkimizdaDetaySection from "@/components/HakkimizdaDetaySection";
 import GaleriSection from "@/components/GaleriSection";
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
       {/* Süitler Vitrini */}
       <SuitlerSection />
 
-      {/* Hizmetler / Olanaklar */}
-      <HizmetlerSection />
+      {/* Kurumsal Değerler & Detaylar (Misyon, Vizyon, Neler Sunuyoruz) */}
+      <HakkimizdaDetaySection />
 
       {/* Fotoğraf Galerisi */}
       <GaleriSection />
