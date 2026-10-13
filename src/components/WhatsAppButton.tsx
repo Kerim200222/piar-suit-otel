@@ -18,7 +18,7 @@ export interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "9054242330000",
+  phoneNumber = "905056331196",
   message = "Merhaba, PiAR SÜİT OTEL konaklama ve rezervasyon hakkında bilgi almak istiyorum.",
   className = "",
 }: WhatsAppButtonProps) {

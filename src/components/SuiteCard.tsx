@@ -11,7 +11,7 @@ export interface SuiteCardProps {
 
 export default function SuiteCard({
   suite,
-  phoneNumber = "9054242330000",
+  phoneNumber = "905056331196",
   className = "",
 }: SuiteCardProps) {
   // Telefon numarasını temizle ve istenilen dinamik Türkçe mesajı URL formatına dönüştür

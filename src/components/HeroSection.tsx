@@ -14,7 +14,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  phoneNumber = "9054242330000",
+  phoneNumber = "905056331196",
   message = "Merhaba, PiAR Süit Otel'de hemen rezervasyon yaptırmak istiyorum. Müsaitlik durumu ve fiyatlar hakkında bilgi alabilir miyim?",
 }: HeroSectionProps) {
   const sanitizedPhone = phoneNumber.replace(/\D/g, "");

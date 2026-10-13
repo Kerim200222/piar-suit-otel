@@ -94,8 +94,8 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
         <Footer />
         <FloatingContact
-          callPhoneNumber="+904242330000"
-          whatsappPhoneNumber="9054242330000"
+          callPhoneNumber="+905056331196"
+          whatsappPhoneNumber="905056331196"
           whatsappMessage="Merhaba, PiAR SÜİT OTEL rezervasyon ve konaklama hakkında bilgi almak istiyorum."
         />
       </body>

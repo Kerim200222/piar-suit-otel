@@ -129,7 +129,7 @@ export default function Footer() {
                 <div>
                   <span className="font-semibold text-primary block">Adres:</span>
                   <p className="text-primary/80 leading-relaxed">
-                    İzzetpaşa Mahallesi, Şehit Yüzbaşı Tahir Caddesi No: 12, Elazığ / Türkiye
+                    İzzetpaşa mahallesi hacı tevfik efendi sokak No.8 Merkez / Elazığ, 23000
                   </p>
                 </div>
               </div>
@@ -152,10 +152,10 @@ export default function Footer() {
                 <div>
                   <span className="font-semibold text-primary block">Telefon:</span>
                   <a
-                    href="tel:+904242330000"
+                    href="tel:+905056331196"
                     className="text-primary/80 hover:text-white transition-colors"
                   >
-                    +90 (424) 233 00 00
+                    +90 505 633 11 96
                   </a>
                 </div>
               </div>
@@ -193,21 +193,12 @@ export default function Footer() {
                 </span>
                 <div className="flex flex-wrap items-center gap-2.5">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/piarsuitotel/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-500 hover:border-primary rounded-lg text-xs font-medium text-primary hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
                   >
                     <span>Instagram</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                  <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-500 hover:border-primary rounded-lg text-xs font-medium text-primary hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
-                  >
-                    <span>YouTube</span>
                     <ExternalLink className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>

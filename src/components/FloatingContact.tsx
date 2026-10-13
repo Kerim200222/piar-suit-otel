@@ -5,11 +5,11 @@ import { Phone } from "lucide-react";
 
 export interface FloatingContactProps {
   /**
-   * Doğrudan arama yapılacak telefon numarası (örn: "+904242330000")
+   * Doğrudan arama yapılacak telefon numarası (örn: "+905056331196")
    */
   callPhoneNumber?: string;
   /**
-   * WhatsApp mesajı için telefon numarası (örn: "9054242330000")
+   * WhatsApp mesajı için telefon numarası (örn: "905056331196")
    */
   whatsappPhoneNumber?: string;
   /**
@@ -23,8 +23,8 @@ export interface FloatingContactProps {
 }
 
 export default function FloatingContact({
-  callPhoneNumber = "+904242330000",
-  whatsappPhoneNumber = "9054242330000",
+  callPhoneNumber = "+905056331196",
+  whatsappPhoneNumber = "905056331196",
   whatsappMessage = "Merhaba, PiAR SÜİT OTEL rezervasyon ve konaklama hakkında bilgi almak istiyorum.",
   className = "",
 }: FloatingContactProps) {
