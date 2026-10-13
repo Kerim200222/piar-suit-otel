@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
@@ -30,27 +31,17 @@ export default function HeroSection({
       id="anasayfa"
       className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Arka Plan Video Katmanı (Full-screen HTML5 Video) */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85"
-          className="object-cover w-full h-full"
-        >
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-luxury-hotel-reception-and-lobby-41485-large.mp4"
-            type="video/mp4"
-          />
-          {/* Alternatif / Yedek Lüks Otel Video Kaynağı */}
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-swimming-pool-and-hotel-architecture-41484-large.mp4"
-            type="video/mp4"
-          />
-          Tarayıcınız video etiketini desteklemiyor.
-        </video>
+      {/* Arka Plan Görsel Katmanı (Full-screen Hero Image) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="PiAR Süit Otel Elazığ"
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain md:object-cover object-center scale-100 w-full h-full"
+          quality={90}
+        />
       </div>
 
       {/* Koyu Degrade Katman (Dark Gradient Overlay - bg-black/50) */}
