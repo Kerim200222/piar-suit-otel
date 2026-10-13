@@ -1,10 +1,14 @@
 import HeroSection from "@/components/HeroSection";
+import HakkimizdaSection from "@/components/HakkimizdaSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Hero Bölümü */}
       <HeroSection />
+
+      {/* Hakkımızda Bölümü */}
+      <HakkimizdaSection />
 
       {/* Süitlerimiz */}
       <section id="suitler" className="py-16 px-6 max-w-7xl mx-auto w-full">
