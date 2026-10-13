@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingContact from "@/components/FloatingContact";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -93,9 +93,10 @@ export default function RootLayout({
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
-        <WhatsAppButton
-          phoneNumber="9054242330000"
-          message="Merhaba, PiAR SÜİT OTEL rezervasyon ve konaklama hakkında bilgi almak istiyorum."
+        <FloatingContact
+          callPhoneNumber="+904242330000"
+          whatsappPhoneNumber="9054242330000"
+          whatsappMessage="Merhaba, PiAR SÜİT OTEL rezervasyon ve konaklama hakkında bilgi almak istiyorum."
         />
       </body>
     </html>
