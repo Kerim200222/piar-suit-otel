@@ -3,6 +3,7 @@ import HakkimizdaSection from "@/components/HakkimizdaSection";
 import SuitlerSection from "@/components/SuitlerSection";
 import HakkimizdaDetaySection from "@/components/HakkimizdaDetaySection";
 import GaleriSection from "@/components/GaleriSection";
+import IletisimVeRezervasyon from "@/components/IletisimVeRezervasyon";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Fotoğraf Galerisi */}
       <GaleriSection />
+
+      {/* İletişim & Hızlı Rezervasyon Formu Bölümü */}
+      <IletisimVeRezervasyon />
     </main>
   );
 }

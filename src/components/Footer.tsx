@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="iletisim" className="bg-secondary text-primary border-t border-primary/20">
+    <footer className="bg-secondary text-primary border-t border-primary/20">
       {/* Ana Footer Alanı (3 Kolon) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
@@ -181,6 +182,33 @@ export default function Footer() {
                     className="text-primary/80 hover:text-white transition-colors"
                   >
                     info@piarsuitotel.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Sosyal Medya Butonları */}
+              <div className="pt-2 border-t border-primary/15">
+                <span className="font-semibold text-primary block mb-2 text-xs uppercase tracking-wider text-primary/75">
+                  Sosyal Medya
+                </span>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-500 hover:border-primary rounded-lg text-xs font-medium text-primary hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
+                  >
+                    <span>Instagram</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-500 hover:border-primary rounded-lg text-xs font-medium text-primary hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
+                  >
+                    <span>YouTube</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </div>

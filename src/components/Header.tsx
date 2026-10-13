@@ -51,15 +51,15 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-secondary/95 backdrop-blur-md shadow-lg shadow-black/20 border-b border-primary/20 py-3"
-          : "bg-white/10 backdrop-blur-md border-b border-white/20 py-4 sm:py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <>
+      <header
+        className={`fixed top-4 sm:top-6 left-0 right-0 mx-auto w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-full md:max-w-4xl lg:max-w-5xl z-50 rounded-full transition-all duration-300 px-4 sm:px-6 py-2.5 sm:py-3.5 ${
+          isScrolled
+            ? "bg-secondary/95 backdrop-blur-md shadow-2xl shadow-black/30 border border-primary/30"
+            : "bg-white/10 backdrop-blur-md shadow-xl shadow-black/20 border border-white/20"
+        }`}
+      >
+        <div className="flex items-center justify-between w-full">
           {/* Sol: Metin Logosu (PiAR SÜİT OTEL) */}
           <Link
             href="/"
@@ -70,18 +70,18 @@ export default function Header() {
               P
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white drop-shadow-sm leading-none">
+              <span className="font-serif text-lg sm:text-xl font-bold tracking-wider text-white drop-shadow-sm leading-none">
                 PiAR SÜİT OTEL
               </span>
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mt-1">
+              <span className="text-[9px] uppercase tracking-[0.25em] text-primary font-semibold mt-0.5">
                 Lüks Konaklama
               </span>
             </div>
           </Link>
 
           {/* Sağ: Masaüstü Navigasyon Linkleri (Yalnızca Türkçe) */}
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex items-center gap-7 text-sm font-medium">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <nav className="flex items-center gap-5 lg:gap-7 text-sm font-medium">
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.name}
@@ -103,11 +103,11 @@ export default function Header() {
           </div>
 
           {/* Mobil Hamburger Butonu */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={toggleMobileMenu}
               type="button"
-              className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors backdrop-blur-sm"
+              className="p-2 sm:p-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors backdrop-blur-sm"
               aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
               aria-expanded={isMobileMenuOpen}
             >
@@ -131,11 +131,11 @@ export default function Header() {
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobil Menü (Floating Glassmorphism Katmanı) */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[64px] sm:top-[74px] bottom-0 z-40 transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -144,34 +144,36 @@ export default function Header() {
         {/* Karartma / Arka plan örtüsü */}
         <div
           onClick={closeMobileMenu}
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
         />
 
-        {/* Menü İçeriği */}
+        {/* Menü Kartı - Pill navbar ile uyumlu zarif açılır kart */}
         <div
-          className={`relative bg-secondary/95 backdrop-blur-2xl border-b border-white/20 shadow-2xl px-6 py-8 transition-transform duration-300 ease-out text-white ${
-            isMobileMenuOpen ? "translate-y-0" : "-translate-y-4"
+          className={`absolute top-20 sm:top-24 inset-x-4 max-w-md mx-auto bg-secondary/95 backdrop-blur-2xl border border-primary/25 rounded-3xl shadow-2xl p-6 transition-all duration-300 ease-out text-white ${
+            isMobileMenuOpen
+              ? "translate-y-0 scale-100 opacity-100"
+              : "-translate-y-4 scale-95 opacity-0"
           }`}
         >
-          <nav className="flex flex-col space-y-4">
+          <nav className="flex flex-col space-y-3">
             {NAV_ITEMS.map((item, idx) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={closeMobileMenu}
                 style={{ transitionDelay: `${idx * 40}ms` }}
-                className="flex items-center justify-between text-base font-medium text-white/90 hover:text-primary py-2 border-b border-white/10 transition-colors"
+                className="flex items-center justify-between text-base font-medium text-white/90 hover:text-primary py-2.5 px-3 rounded-xl hover:bg-white/5 border-b border-white/10 transition-colors"
               >
                 <span>{item.name}</span>
-                <span className="text-primary text-xs">→</span>
+                <span className="text-primary text-xs font-serif">→</span>
               </Link>
             ))}
 
-            <div className="pt-4">
+            <div className="pt-3">
               <Link
                 href="#suitler"
                 onClick={closeMobileMenu}
-                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-xl transition-all shadow-md active:scale-98"
+                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-full transition-all shadow-md active:scale-98"
               >
                 Rezervasyon Yap
               </Link>
@@ -179,6 +181,6 @@ export default function Header() {
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }
