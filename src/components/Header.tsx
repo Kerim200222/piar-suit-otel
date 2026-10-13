@@ -20,10 +20,10 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Sayfa kaydırıldığında glassmorphism efektini derinleştir
+  // Sayfa kaydırıldığında arka plan kontrastını dinamik olarak destekle
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -52,15 +52,15 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/10 backdrop-blur-md border-b border-white/20 ${
         isScrolled
-          ? "bg-[#faf9f6]/85 backdrop-blur-xl border-b border-primary/25 shadow-md shadow-secondary/5 py-3"
-          : "bg-[#faf9f6]/70 backdrop-blur-md border-b border-secondary/10 py-4 sm:py-5"
+          ? "bg-black/60 shadow-lg shadow-black/10 py-3"
+          : "py-4 sm:py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Sol: Metin Logosu */}
+          {/* Sol: Metin Logosu (PiAR SÜİT OTEL) */}
           <Link
             href="/"
             onClick={closeMobileMenu}
@@ -70,7 +70,7 @@ export default function Header() {
               P
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-secondary leading-none">
+              <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white drop-shadow-sm leading-none">
                 PiAR SÜİT OTEL
               </span>
               <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mt-1">
@@ -79,14 +79,14 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Sağ: Masaüstü Navigasyon Linkleri */}
+          {/* Sağ: Masaüstü Navigasyon Linkleri (Yalnızca Türkçe) */}
           <div className="hidden md:flex items-center gap-8">
             <nav className="flex items-center gap-7 text-sm font-medium">
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-secondary/80 hover:text-secondary transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative text-white/90 hover:text-primary drop-shadow-sm transition-colors duration-200 py-1 font-sans after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.name}
                 </Link>
@@ -95,8 +95,8 @@ export default function Header() {
 
             {/* Rezervasyon Aksiyon Butonu */}
             <Link
-              href="#rezervasyon"
-              className="bg-primary hover:bg-primary-dark text-secondary font-semibold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow hover:brightness-105 active:scale-95"
+              href="#suitler"
+              className="bg-primary hover:bg-primary-dark text-secondary font-semibold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 border border-primary-light/40"
             >
               Rezervasyon Yap
             </Link>
@@ -107,23 +107,23 @@ export default function Header() {
             <button
               onClick={toggleMobileMenu}
               type="button"
-              className="p-2.5 rounded-xl bg-secondary/5 hover:bg-secondary/10 border border-secondary/15 text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+              className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors backdrop-blur-sm"
               aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
               aria-expanded={isMobileMenuOpen}
             >
               <div className="w-5 h-4 flex flex-col justify-between items-center relative">
                 <span
-                  className={`w-full h-0.5 bg-secondary rounded-full transform transition-all duration-300 origin-center ${
+                  className={`w-full h-0.5 bg-white rounded-full transform transition-all duration-300 origin-center ${
                     isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
                   }`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-secondary rounded-full transition-all duration-200 ${
+                  className={`w-full h-0.5 bg-white rounded-full transition-all duration-200 ${
                     isMobileMenuOpen ? "opacity-0" : "opacity-100"
                   }`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-secondary rounded-full transform transition-all duration-300 origin-center ${
+                  className={`w-full h-0.5 bg-white rounded-full transform transition-all duration-300 origin-center ${
                     isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
                   }`}
                 />
@@ -133,9 +133,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobil Menü (Glassmorphism Katmanı) */}
+      {/* Mobil Menü (Floating Glassmorphism Katmanı) */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[65px] sm:top-[77px] bottom-0 z-40 transition-all duration-300 ${
+        className={`md:hidden fixed inset-x-0 top-[64px] sm:top-[74px] bottom-0 z-40 transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -144,12 +144,12 @@ export default function Header() {
         {/* Karartma / Arka plan örtüsü */}
         <div
           onClick={closeMobileMenu}
-          className="absolute inset-0 bg-secondary/30 backdrop-blur-sm transition-opacity"
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
         />
 
         {/* Menü İçeriği */}
         <div
-          className={`relative bg-[#faf9f6]/95 backdrop-blur-2xl border-b border-primary/20 shadow-2xl px-6 py-8 transition-transform duration-300 ease-out ${
+          className={`relative bg-secondary/95 backdrop-blur-2xl border-b border-white/20 shadow-2xl px-6 py-8 transition-transform duration-300 ease-out text-white ${
             isMobileMenuOpen ? "translate-y-0" : "-translate-y-4"
           }`}
         >
@@ -160,7 +160,7 @@ export default function Header() {
                 href={item.href}
                 onClick={closeMobileMenu}
                 style={{ transitionDelay: `${idx * 40}ms` }}
-                className="flex items-center justify-between text-base font-medium text-secondary/90 hover:text-primary py-2 border-b border-secondary/10 transition-colors"
+                className="flex items-center justify-between text-base font-medium text-white/90 hover:text-primary py-2 border-b border-white/10 transition-colors"
               >
                 <span>{item.name}</span>
                 <span className="text-primary text-xs">→</span>
@@ -169,7 +169,7 @@ export default function Header() {
 
             <div className="pt-4">
               <Link
-                href="#rezervasyon"
+                href="#suitler"
                 onClick={closeMobileMenu}
                 className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-xl transition-all shadow-md active:scale-98"
               >
