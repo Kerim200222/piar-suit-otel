@@ -1,67 +1,10 @@
+import HeroSection from "@/components/HeroSection";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Hero Bölümü */}
-      <section
-        id="anasayfa"
-        className="relative py-20 lg:py-28 px-6 bg-gradient-to-b from-background via-luxury-sand/30 to-background"
-      >
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/5 border border-primary/30 text-xs tracking-wider uppercase text-secondary font-medium">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Unutulmaz Bir Tatil Deneyimi
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-secondary tracking-tight leading-tight">
-            Zarafet, Lüks ve <span className="text-primary italic">Kusursuz Konfor</span>
-          </h1>
-
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-secondary/75 leading-relaxed font-sans">
-            Piar Suit Otel’in özenle tasarlanmış seçkin süitlerinde ayrıcalıklı bir konaklama deneyimine adım atın. Size özel hizmet anlayışımızla her anınızı eşsiz kılıyoruz.
-          </p>
-
-          {/* Hızlı Rezervasyon Çubuğu */}
-          <div className="mt-10 p-4 sm:p-6 bg-white rounded-2xl shadow-xl border border-secondary/10 max-w-4xl mx-auto text-left">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-secondary/70 mb-1.5 font-medium">
-                  Giriş Tarihi
-                </label>
-                <input
-                  type="date"
-                  className="w-full bg-background border border-secondary/20 rounded-lg px-3 py-2.5 text-sm text-secondary focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-secondary/70 mb-1.5 font-medium">
-                  Çıkış Tarihi
-                </label>
-                <input
-                  type="date"
-                  className="w-full bg-background border border-secondary/20 rounded-lg px-3 py-2.5 text-sm text-secondary focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-secondary/70 mb-1.5 font-medium">
-                  Misafir Sayısı
-                </label>
-                <input
-                  type="text"
-                  placeholder="2 Yetişkin, 1 Çocuk"
-                  className="w-full bg-background border border-secondary/20 rounded-lg px-3 py-2.5 text-sm text-secondary placeholder:text-secondary/40 focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-
-              <button className="w-full bg-secondary hover:bg-secondary-light text-primary font-semibold text-sm py-2.5 px-4 rounded-lg border border-primary/40 transition-colors flex items-center justify-center gap-2">
-                <span>Oda Ara</span>
-                <span className="text-primary">→</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Süitlerimiz */}
       <section id="suitler" className="py-16 px-6 max-w-7xl mx-auto w-full">
