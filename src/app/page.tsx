@@ -194,23 +194,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Alt Bilgi / İletişim / Footer */}
-      <footer id="iletisim" className="mt-auto border-t border-secondary/10 bg-secondary text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <div>
-            <span className="font-serif text-xl tracking-widest text-primary font-bold">
-              PiAR SÜİT OTEL
-            </span>
-            <p className="text-xs text-white/60 mt-1">
-              Lüks konaklama ve unutulmaz anıların buluşma noktası.
-            </p>
-          </div>
-          <div className="text-xs text-white/50">
-            © {new Date().getFullYear()} PiAR SÜİT OTEL. Tüm hakları saklıdır.
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
