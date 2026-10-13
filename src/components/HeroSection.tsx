@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   /**
@@ -22,7 +23,6 @@ export default function HeroSection({
   const whatsappUrl = `https://wa.me/${sanitizedPhone}?text=${encodedMessage}`;
 
   const handleReservationClick = () => {
-    // WhatsApp FAB butonunu veya doğrudan WhatsApp iletişim linkini tetikle
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
@@ -31,41 +31,68 @@ export default function HeroSection({
       id="anasayfa"
       className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Arka Plan Görseli (Yüksek Kaliteli Unsplash Lüks Otel Görseli) */}
-      <Image
-        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85"
-        alt="PiAR Süit Otel Lüks Konaklama"
-        fill
-        priority
-        className="object-cover object-center scale-105 animate-fade-in"
-        sizes="100vw"
-      />
+      {/* Arka Plan Görseli (Framer Motion Fade-in Efekti) */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.08 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="absolute inset-0"
+      >
+        <Image
+          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85"
+          alt="PiAR Süit Otel Lüks Konaklama"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </motion.div>
 
-      {/* Koyu Katman (Dark Overlay with luxury tint) */}
+      {/* Koyu Katman (Dark Overlay) */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/75 z-10 backdrop-brightness-90" />
 
-      {/* Merkez İçerik */}
+      {/* Merkez İçerik (Kademeli Fade-up Animasyonu) */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white flex flex-col items-center">
-        {/* Üst Rozet / Altın Başlık Vurgusu */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 border border-primary/40 backdrop-blur-md mb-6 shadow-lg">
+        {/* Üst Rozet */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 border border-primary/40 backdrop-blur-md mb-6 shadow-lg"
+        >
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-primary font-semibold">
             Elazığ&apos;da Ayrıcalıklı Konaklama
           </span>
-        </div>
+        </motion.div>
 
-        {/* Ana Başlık */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#faf9f6] leading-[1.15] max-w-4xl drop-shadow-md">
+        {/* Ana Başlık (Fade up) */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#faf9f6] leading-[1.15] max-w-4xl drop-shadow-md"
+        >
           PiAR Süit Otel&apos;e <span className="text-primary italic">Hoş Geldiniz</span>
-        </h1>
+        </motion.h1>
 
-        {/* Türkçe Alt Başlık (Subheadline) */}
-        <p className="mt-6 text-base sm:text-lg md:text-xl text-[#faf9f6]/85 font-sans font-light max-w-2xl leading-relaxed drop-shadow-sm">
+        {/* Türkçe Alt Başlık (Fade up) */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="mt-6 text-base sm:text-lg md:text-xl text-[#faf9f6]/85 font-sans font-light max-w-2xl leading-relaxed drop-shadow-sm"
+        >
           Zarafet, konfor ve kusursuz misafirperverliğin buluştuğu seçkin süitlerimizde unutulmaz bir tatil ve konaklama deneyimi sizleri bekliyor.
-        </p>
+        </motion.p>
 
-        {/* Rezervasyon Aksiyon Alanı (Primary CTA) */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        {/* Rezervasyon Aksiyon Alanı (Fade up) */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.65, ease: "easeOut" }}
+          className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+        >
           <button
             onClick={handleReservationClick}
             type="button"
@@ -97,10 +124,15 @@ export default function HeroSection({
           >
             Süitleri Keşfet
           </a>
-        </div>
+        </motion.div>
 
-        {/* Otel Özellikleri Küçük Bilgi Şeridi */}
-        <div className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-center w-full max-w-3xl">
+        {/* Otel Özellikleri Küçük Bilgi Şeridi (Fade up) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-center w-full max-w-3xl"
+        >
           <div>
             <span className="font-serif text-2xl sm:text-3xl font-bold text-primary block">
               24/7
@@ -133,11 +165,16 @@ export default function HeroSection({
               Süit Konsepti
             </span>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Aşağı Kaydır Oku (Scroll Indicator) */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white/60 flex flex-col items-center gap-1 animate-bounce pointer-events-none">
+      {/* Aşağı Kaydır Oku */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white/60 flex flex-col items-center gap-1 animate-bounce pointer-events-none"
+      >
         <span className="text-[10px] uppercase tracking-widest text-primary">Aşağı Kaydır</span>
         <svg
           className="w-4 h-4 text-primary"
@@ -147,7 +184,7 @@ export default function HeroSection({
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }
