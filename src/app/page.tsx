@@ -1,46 +1,11 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
-      {/* Üst Bilgi / Header */}
-      <header className="border-b border-secondary/10 bg-background/80 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-serif text-xl font-bold border border-primary/40 shadow-sm">
-              P
-            </span>
-            <div>
-              <span className="font-serif text-2xl tracking-widest text-secondary uppercase font-semibold">
-                Piar Suit Otel
-              </span>
-              <span className="block text-[10px] uppercase tracking-[0.25em] text-primary font-medium">
-                Lüks & Konfor
-              </span>
-            </div>
-          </div>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-secondary/80">
-            <a href="#hakkimizda" className="hover:text-primary transition-colors">
-              Hakkımızda
-            </a>
-            <a href="#suitler" className="hover:text-primary transition-colors">
-              Süitlerimiz
-            </a>
-            <a href="#ayricaliklar" className="hover:text-primary transition-colors">
-              Ayrıcalıklar
-            </a>
-            <a href="#iletisim" className="hover:text-primary transition-colors">
-              İletişim
-            </a>
-          </nav>
-
-          <button className="bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm px-6 py-2.5 rounded-full transition-all shadow-sm hover:shadow">
-            Rezervasyon Yap
-          </button>
-        </div>
-      </header>
-
       {/* Hero Bölümü */}
-      <section className="relative py-20 lg:py-28 px-6 bg-gradient-to-b from-background via-luxury-sand/30 to-background">
+      <section
+        id="anasayfa"
+        className="relative py-20 lg:py-28 px-6 bg-gradient-to-b from-background via-luxury-sand/30 to-background"
+      >
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/5 border border-primary/30 text-xs tracking-wider uppercase text-secondary font-medium">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -98,8 +63,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ayrıcalıklar / Özellikler */}
-      <section id="ayricaliklar" className="py-16 px-6 max-w-7xl mx-auto w-full">
+      {/* Süitlerimiz */}
+      <section id="suitler" className="py-16 px-6 max-w-7xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <span className="text-primary text-xs uppercase tracking-[0.25em] font-semibold">
+            Konfor & Zarafet
+          </span>
+          <h2 className="text-3xl font-serif font-bold text-secondary mt-2">
+            Öne Çıkan Süitlerimiz
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
+            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
+              Deluxe Süit
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-serif font-semibold text-secondary">
+                Deluxe Kral Süiti
+              </h3>
+              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
+                Panoramik şehir manzarası, jakuzi ve özel oturma alanı ile üst düzey konfor.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
+            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
+              Junior Süit
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-serif font-semibold text-secondary">
+                Junior Aile Süiti
+              </h3>
+              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
+                Geniş aileler için tasarlanmış, ferah ve huzurlu bir yaşam alanı.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
+            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
+              Executive Süit
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-serif font-semibold text-secondary">
+                Executive İş Süiti
+              </h3>
+              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
+                İş seyahatleriniz için çalışma alanı ve üstün ses yalıtımı ile donatılmış özel oda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hizmetler / Ayrıcalıklar */}
+      <section id="hizmetler" className="py-16 px-6 max-w-7xl mx-auto w-full">
         <div className="text-center mb-12">
           <span className="text-primary text-xs uppercase tracking-[0.25em] font-semibold">
             Seçkin Hizmetler
@@ -148,19 +169,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Alt Bilgi / Footer */}
-      <footer className="mt-auto border-t border-secondary/10 bg-secondary text-white py-12 px-6">
+      {/* Galeri */}
+      <section id="galeri" className="py-16 px-6 max-w-7xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <span className="text-primary text-xs uppercase tracking-[0.25em] font-semibold">
+            Görsel Tur
+          </span>
+          <h2 className="text-3xl font-serif font-bold text-secondary mt-2">
+            Otelimizden Kareler
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="h-44 bg-secondary/5 rounded-xl border border-secondary/10 flex items-center justify-center text-xs text-secondary/50 font-medium">
+            Lobi & Karşılama
+          </div>
+          <div className="h-44 bg-secondary/5 rounded-xl border border-secondary/10 flex items-center justify-center text-xs text-secondary/50 font-medium">
+            Süit Odalar
+          </div>
+          <div className="h-44 bg-secondary/5 rounded-xl border border-secondary/10 flex items-center justify-center text-xs text-secondary/50 font-medium">
+            Restoran & Bar
+          </div>
+          <div className="h-44 bg-secondary/5 rounded-xl border border-secondary/10 flex items-center justify-center text-xs text-secondary/50 font-medium">
+            Spa & Dinlenme
+          </div>
+        </div>
+      </section>
+
+      {/* Alt Bilgi / İletişim / Footer */}
+      <footer id="iletisim" className="mt-auto border-t border-secondary/10 bg-secondary text-white py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <span className="font-serif text-xl tracking-widest text-primary font-bold">
-              PIAR SUIT OTEL
+              PiAR SÜİT OTEL
             </span>
             <p className="text-xs text-white/60 mt-1">
               Lüks konaklama ve unutulmaz anıların buluşma noktası.
             </p>
           </div>
           <div className="text-xs text-white/50">
-            © {new Date().getFullYear()} Piar Suit Otel. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} PiAR SÜİT OTEL. Tüm hakları saklıdır.
           </div>
         </div>
       </footer>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     "Piar Suit Otel - Ayrıcalıklı lüks konaklama, zarif süit odalar ve üstün misafirperverlik deneyimi.",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,8 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${playfair.variable} ${jakarta.variable}`}>
-      <body className="font-sans antialiased bg-background text-foreground min-h-screen">
-        {children}
+      <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col">
+        <Header />
+        <div className="flex-1">{children}</div>
       </body>
     </html>
   );

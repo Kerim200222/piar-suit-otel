@@ -1,0 +1,184 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { name: "Anasayfa", href: "/" },
+  { name: "Süitler", href: "#suitler" },
+  { name: "Hizmetler", href: "#hizmetler" },
+  { name: "Galeri", href: "#galeri" },
+  { name: "İletişim", href: "#iletisim" },
+];
+
+export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Sayfa kaydırıldığında glassmorphism efektini derinleştir
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Menü açıkken arka plan kaydırmasını engelle (mobil)
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#faf9f6]/85 backdrop-blur-xl border-b border-primary/25 shadow-md shadow-secondary/5 py-3"
+          : "bg-[#faf9f6]/70 backdrop-blur-md border-b border-secondary/10 py-4 sm:py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Sol: Metin Logosu */}
+          <Link
+            href="/"
+            onClick={closeMobileMenu}
+            className="group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.01]"
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-secondary text-primary flex items-center justify-center font-serif text-base sm:text-lg font-bold border border-primary/50 shadow-sm transition-colors group-hover:border-primary">
+              P
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-secondary leading-none">
+                PiAR SÜİT OTEL
+              </span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mt-1">
+                Lüks Konaklama
+              </span>
+            </div>
+          </Link>
+
+          {/* Sağ: Masaüstü Navigasyon Linkleri */}
+          <div className="hidden md:flex items-center gap-8">
+            <nav className="flex items-center gap-7 text-sm font-medium">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-secondary/80 hover:text-secondary transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Rezervasyon Aksiyon Butonu */}
+            <Link
+              href="#rezervasyon"
+              className="bg-primary hover:bg-primary-dark text-secondary font-semibold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow hover:brightness-105 active:scale-95"
+            >
+              Rezervasyon Yap
+            </Link>
+          </div>
+
+          {/* Mobil Hamburger Butonu */}
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={toggleMobileMenu}
+              type="button"
+              className="p-2.5 rounded-xl bg-secondary/5 hover:bg-secondary/10 border border-secondary/15 text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+              aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              <div className="w-5 h-4 flex flex-col justify-between items-center relative">
+                <span
+                  className={`w-full h-0.5 bg-secondary rounded-full transform transition-all duration-300 origin-center ${
+                    isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
+                  }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-secondary rounded-full transition-all duration-200 ${
+                    isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-secondary rounded-full transform transition-all duration-300 origin-center ${
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobil Menü (Glassmorphism Katmanı) */}
+      <div
+        className={`md:hidden fixed inset-x-0 top-[65px] sm:top-[77px] bottom-0 z-40 transition-all duration-300 ${
+          isMobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Karartma / Arka plan örtüsü */}
+        <div
+          onClick={closeMobileMenu}
+          className="absolute inset-0 bg-secondary/30 backdrop-blur-sm transition-opacity"
+        />
+
+        {/* Menü İçeriği */}
+        <div
+          className={`relative bg-[#faf9f6]/95 backdrop-blur-2xl border-b border-primary/20 shadow-2xl px-6 py-8 transition-transform duration-300 ease-out ${
+            isMobileMenuOpen ? "translate-y-0" : "-translate-y-4"
+          }`}
+        >
+          <nav className="flex flex-col space-y-4">
+            {NAV_ITEMS.map((item, idx) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={closeMobileMenu}
+                style={{ transitionDelay: `${idx * 40}ms` }}
+                className="flex items-center justify-between text-base font-medium text-secondary/90 hover:text-primary py-2 border-b border-secondary/10 transition-colors"
+              >
+                <span>{item.name}</span>
+                <span className="text-primary text-xs">→</span>
+              </Link>
+            ))}
+
+            <div className="pt-4">
+              <Link
+                href="#rezervasyon"
+                onClick={closeMobileMenu}
+                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-xl transition-all shadow-md active:scale-98"
+              >
+                Rezervasyon Yap
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}
