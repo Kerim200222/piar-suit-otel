@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
@@ -31,25 +30,31 @@ export default function HeroSection({
       id="anasayfa"
       className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Arka Plan Görseli (Framer Motion Fade-in Efekti) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 1.08 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
-        className="absolute inset-0"
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85"
-          alt="PiAR Süit Otel Lüks Konaklama"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </motion.div>
+      {/* Arka Plan Video Katmanı (Full-screen HTML5 Video) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=85"
+          className="object-cover w-full h-full"
+        >
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-luxury-hotel-reception-and-lobby-41485-large.mp4"
+            type="video/mp4"
+          />
+          {/* Alternatif / Yedek Lüks Otel Video Kaynağı */}
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-swimming-pool-and-hotel-architecture-41484-large.mp4"
+            type="video/mp4"
+          />
+          Tarayıcınız video etiketini desteklemiyor.
+        </video>
+      </div>
 
-      {/* Koyu Katman (Dark Overlay) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/75 z-10 backdrop-brightness-90" />
+      {/* Koyu Degrade Katman (Dark Gradient Overlay - bg-black/50) */}
+      <div className="absolute inset-0 bg-black/50 bg-gradient-to-t from-black/85 via-black/50 to-black/60 z-10 backdrop-brightness-90" />
 
       {/* Merkez İçerik (Kademeli Fade-up Animasyonu) */}
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white flex flex-col items-center">
@@ -58,7 +63,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/40 border border-primary/40 backdrop-blur-md mb-6 shadow-lg"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/50 border border-primary/40 backdrop-blur-md mb-6 shadow-xl"
         >
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-primary font-semibold">
@@ -71,7 +76,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#faf9f6] leading-[1.15] max-w-4xl drop-shadow-md"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#faf9f6] leading-[1.15] max-w-4xl drop-shadow-lg"
         >
           PiAR Süit Otel&apos;e <span className="text-primary italic">Hoş Geldiniz</span>
         </motion.h1>
@@ -81,7 +86,7 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="mt-6 text-base sm:text-lg md:text-xl text-[#faf9f6]/85 font-sans font-light max-w-2xl leading-relaxed drop-shadow-sm"
+          className="mt-6 text-base sm:text-lg md:text-xl text-[#faf9f6]/90 font-sans font-light max-w-2xl leading-relaxed drop-shadow-md"
         >
           Zarafet, konfor ve kusursuz misafirperverliğin buluştuğu seçkin süitlerimizde unutulmaz bir tatil ve konaklama deneyimi sizleri bekliyor.
         </motion.p>
@@ -96,7 +101,7 @@ export default function HeroSection({
           <button
             onClick={handleReservationClick}
             type="button"
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary-dark text-secondary font-bold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-2xl hover:shadow-primary/30 hover:scale-105 active:scale-95 border border-primary-light/40"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary-dark text-secondary font-bold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-2xl hover:shadow-primary/40 hover:scale-105 active:scale-95 border border-primary-light/50"
           >
             {/* WhatsApp İkonu */}
             <svg
@@ -120,7 +125,7 @@ export default function HeroSection({
 
           <a
             href="#suitler"
-            className="w-full sm:w-auto inline-flex items-center justify-center text-sm font-medium text-[#faf9f6] hover:text-primary px-6 py-4 rounded-full border border-white/20 hover:border-primary/50 bg-black/30 backdrop-blur-sm transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center text-sm font-medium text-[#faf9f6] hover:text-primary px-6 py-4 rounded-full border border-white/20 hover:border-primary/50 bg-black/40 backdrop-blur-sm transition-all duration-300"
           >
             Süitleri Keşfet
           </a>
@@ -131,13 +136,13 @@ export default function HeroSection({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-center w-full max-w-3xl"
+          className="mt-14 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-center w-full max-w-3xl"
         >
           <div>
             <span className="font-serif text-2xl sm:text-3xl font-bold text-primary block">
               24/7
             </span>
-            <span className="text-xs text-[#faf9f6]/70 uppercase tracking-wider font-sans">
+            <span className="text-xs text-[#faf9f6]/80 uppercase tracking-wider font-sans">
               Oda Servisi
             </span>
           </div>
@@ -145,7 +150,7 @@ export default function HeroSection({
             <span className="font-serif text-2xl sm:text-3xl font-bold text-primary block">
               %100
             </span>
-            <span className="text-xs text-[#faf9f6]/70 uppercase tracking-wider font-sans">
+            <span className="text-xs text-[#faf9f6]/80 uppercase tracking-wider font-sans">
               Misafir Memnuniyeti
             </span>
           </div>
@@ -153,7 +158,7 @@ export default function HeroSection({
             <span className="font-serif text-2xl sm:text-3xl font-bold text-primary block">
               Merkezi
             </span>
-            <span className="text-xs text-[#faf9f6]/70 uppercase tracking-wider font-sans">
+            <span className="text-xs text-[#faf9f6]/80 uppercase tracking-wider font-sans">
               Elazığ Konumu
             </span>
           </div>
@@ -161,7 +166,7 @@ export default function HeroSection({
             <span className="font-serif text-2xl sm:text-3xl font-bold text-primary block">
               VIP
             </span>
-            <span className="text-xs text-[#faf9f6]/70 uppercase tracking-wider font-sans">
+            <span className="text-xs text-[#faf9f6]/80 uppercase tracking-wider font-sans">
               Süit Konsepti
             </span>
           </div>
@@ -173,9 +178,9 @@ export default function HeroSection({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.6 }}
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white/60 flex flex-col items-center gap-1 animate-bounce pointer-events-none"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white/70 flex flex-col items-center gap-1 animate-bounce pointer-events-none"
       >
-        <span className="text-[10px] uppercase tracking-widest text-primary">Aşağı Kaydır</span>
+        <span className="text-[10px] uppercase tracking-widest text-primary font-medium">Aşağı Kaydır</span>
         <svg
           className="w-4 h-4 text-primary"
           fill="none"
