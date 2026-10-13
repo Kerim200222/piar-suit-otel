@@ -1,5 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import HakkimizdaSection from "@/components/HakkimizdaSection";
+import SuiteCard from "@/components/SuiteCard";
+import { SUITES } from "@/data/suites";
 
 export default function Home() {
   return (
@@ -11,58 +13,23 @@ export default function Home() {
       <HakkimizdaSection />
 
       {/* Süitlerimiz */}
-      <section id="suitler" className="py-16 px-6 max-w-7xl mx-auto w-full">
-        <div className="text-center mb-12">
-          <span className="text-primary text-xs uppercase tracking-[0.25em] font-semibold">
+      <section id="suitler" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="text-center mb-14">
+          <span className="text-primary text-xs uppercase tracking-[0.25em] font-bold">
             Konfor & Zarafet
           </span>
-          <h2 className="text-3xl font-serif font-bold text-secondary mt-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-secondary mt-3">
             Öne Çıkan Süitlerimiz
           </h2>
+          <p className="mt-4 text-sm sm:text-base text-secondary/70 max-w-2xl mx-auto font-sans">
+            Her biri misafirlerimizin konforu için özel olarak dizayn edilmiş süitlerimizde lüks ve huzurlu bir konaklamanın keyfini çıkarın.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
-            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
-              Deluxe Süit
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-serif font-semibold text-secondary">
-                Deluxe Kral Süiti
-              </h3>
-              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
-                Panoramik şehir manzarası, jakuzi ve özel oturma alanı ile üst düzey konfor.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
-            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
-              Junior Süit
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-serif font-semibold text-secondary">
-                Junior Aile Süiti
-              </h3>
-              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
-                Geniş aileler için tasarlanmış, ferah ve huzurlu bir yaşam alanı.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-secondary/10 overflow-hidden shadow-sm hover:border-primary/50 transition-all">
-            <div className="h-48 bg-secondary/10 flex items-center justify-center font-serif text-secondary/40 text-lg">
-              Executive Süit
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-serif font-semibold text-secondary">
-                Executive İş Süiti
-              </h3>
-              <p className="text-xs text-secondary/70 mt-2 leading-relaxed">
-                İş seyahatleriniz için çalışma alanı ve üstün ses yalıtımı ile donatılmış özel oda.
-              </p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {SUITES.map((suite) => (
+            <SuiteCard key={suite.id} suite={suite} />
+          ))}
         </div>
       </section>
 
