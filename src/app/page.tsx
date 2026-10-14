@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import HakkimizdaSection from "@/components/HakkimizdaSection";
-import SuitlerSection from "@/components/SuitlerSection";
 import HakkimizdaDetaySection from "@/components/HakkimizdaDetaySection";
 import GaleriSection from "@/components/GaleriSection";
 import IletisimVeRezervasyon from "@/components/IletisimVeRezervasyon";
@@ -13,9 +12,6 @@ export default function Home() {
 
       {/* Hakkımızda Bölümü */}
       <HakkimizdaSection />
-
-      {/* Süitler Vitrini */}
-      <SuitlerSection />
 
       {/* Kurumsal Değerler & Detaylar (Misyon, Vizyon, Neler Sunuyoruz) */}
       <HakkimizdaDetaySection />

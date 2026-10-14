@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-sans">
               <li>
                 <Link
-                  href="/"
+                  href="#anasayfa"
                   className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
                   <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
@@ -54,13 +54,13 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#suitler"
+                  href="#hakkimizda"
                   className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
                   <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
-                  <span>Süitlerimiz</span>
+                  <span>Hakkımızda</span>
                 </Link>
               </li>
               <li>
@@ -128,9 +128,14 @@ export default function Footer() {
                 </svg>
                 <div>
                   <span className="font-semibold text-primary block">Adres:</span>
-                  <p className="text-primary/80 leading-relaxed">
-                    İzzetpaşa mahallesi hacı tevfik efendi sokak No.8 Merkez / Elazığ, 23000
-                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/xMzkFVhqhuZ7vbFV8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary/80 hover:text-white transition-colors leading-relaxed block"
+                  >
+                    İzzet Paşa, Hacı Tevfik Efendi Sk. no:22, 23100 Elazığ Merkez/Elazığ
+                  </a>
                 </div>
               </div>
 
@@ -152,10 +157,10 @@ export default function Footer() {
                 <div>
                   <span className="font-semibold text-primary block">Telefon:</span>
                   <a
-                    href="tel:+905056331196"
+                    href="tel:+905308441723"
                     className="text-primary/80 hover:text-white transition-colors"
                   >
-                    +90 505 633 11 96
+                    0530 844 17 23
                   </a>
                 </div>
               </div>

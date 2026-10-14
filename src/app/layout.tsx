@@ -88,14 +88,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${playfair.variable} ${jakarta.variable}`}>
+    <html lang="tr" className={`${playfair.variable} ${jakarta.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col">
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
         <FloatingContact
-          callPhoneNumber="+905056331196"
-          whatsappPhoneNumber="905056331196"
+          callPhoneNumber="+905308441723"
+          whatsappPhoneNumber="905308441723"
+          instagramUrl="https://www.instagram.com/piarsuitotel/"
           whatsappMessage="Merhaba, PiAR SÜİT OTEL rezervasyon ve konaklama hakkında bilgi almak istiyorum."
         />
       </body>

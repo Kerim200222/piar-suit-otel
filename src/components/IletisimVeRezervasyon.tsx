@@ -31,7 +31,7 @@ export default function IletisimVeRezervasyon() {
       `Merhaba, yukarıdaki tarihler için otelinizde müsaitlik durumu ve fiyat teklifi almak istiyorum. Yardımcı olabilir misiniz?`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/905056331196?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/905308441723?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -69,8 +69,8 @@ export default function IletisimVeRezervasyon() {
                 </div>
                 <div>
                   <span className="text-xs uppercase tracking-wider text-secondary/60 font-semibold block">Telefon</span>
-                  <a href="tel:+905056331196" className="text-sm font-semibold text-secondary hover:text-primary transition-colors">
-                    +90 505 633 11 96
+                  <a href="tel:+905308441723" className="text-sm font-semibold text-secondary hover:text-primary transition-colors">
+                    0530 844 17 23
                   </a>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function IletisimVeRezervasyon() {
                 <div>
                   <span className="text-xs uppercase tracking-wider text-secondary/60 font-semibold block">Adres</span>
                   <span className="text-sm font-semibold text-secondary leading-snug">
-                    İzzetpaşa mahallesi hacı tevfik efendi sokak No.8 Merkez / Elazığ, 23000
+                    İzzet Paşa, Hacı Tevfik Efendi Sk. no:22, 23100 Elazığ Merkez/Elazığ
                   </span>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function IletisimVeRezervasyon() {
             <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
               {/* Hemen Ara */}
               <a
-                href="tel:+905056331196"
+                href="tel:+905308441723"
                 className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-secondary hover:bg-secondary/90 text-primary border border-primary/30 font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow hover:scale-[1.02] active:scale-95"
               >
                 <Phone className="w-4 h-4 text-primary" />
@@ -128,7 +128,7 @@ export default function IletisimVeRezervasyon() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/905056331196?text=Merhaba,%20PiAR%20S%C3%9CiT%20OTEL%20hakk%C4%B1nda%20bilgi%20ve%20rezervasyon%20almak%20istiyorum."
+                href="https://wa.me/905308441723?text=Merhaba,%20PiAR%20S%C3%9CiT%20OTEL%20hakk%C4%B1nda%20bilgi%20ve%20rezervasyon%20almak%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow hover:scale-[1.02] active:scale-95"
@@ -141,7 +141,7 @@ export default function IletisimVeRezervasyon() {
 
               {/* Haritada Gör */}
               <a
-                href="https://www.google.com/maps/search/?api=1&query=İzzetpaşa+mahallesi+hacı+tevfik+efendi+sokak+No.8+Elazığ"
+                href="https://maps.app.goo.gl/xMzkFVhqhuZ7vbFV8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white hover:bg-secondary/5 text-secondary border border-secondary/20 font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow hover:scale-[1.02] active:scale-95"

@@ -15,7 +15,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  phoneNumber = "905056331196",
+  phoneNumber = "905308441723",
   message = "Merhaba, PiAR Süit Otel'de hemen rezervasyon yaptırmak istiyorum. Müsaitlik durumu ve fiyatlar hakkında bilgi alabilir miyim?",
 }: HeroSectionProps) {
   const sanitizedPhone = phoneNumber.replace(/\D/g, "");
@@ -115,7 +115,7 @@ export default function HeroSection({
           </button>
 
           <a
-            href="#suitler"
+            href="#iletisim"
             className="w-full sm:w-auto inline-flex items-center justify-center text-sm font-medium text-[#faf9f6] hover:text-primary px-6 py-4 rounded-full border border-white/20 hover:border-primary/50 bg-black/40 backdrop-blur-sm transition-all duration-300"
           >
             Süitleri Keşfet

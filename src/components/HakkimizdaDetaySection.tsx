@@ -7,7 +7,7 @@ export default function HakkimizdaDetaySection() {
   return (
     <section
       id="hizmetler"
-      className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-luxury-sand/20 to-background relative overflow-hidden"
+      className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-luxury-sand/20 to-background relative overflow-hidden scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         {/* Bölüm Başlığı */}

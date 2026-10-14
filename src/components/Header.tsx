@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavItem {
   name: string;
@@ -9,8 +10,8 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { name: "Anasayfa", href: "/" },
-  { name: "Süitler", href: "#suitler" },
+  { name: "Anasayfa", href: "#anasayfa" },
+  { name: "Hakkımızda", href: "#hakkimizda" },
   { name: "Hizmetler", href: "#hizmetler" },
   { name: "Galeri", href: "#galeri" },
   { name: "İletişim", href: "#iletisim" },
@@ -60,23 +61,21 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center justify-between w-full">
-          {/* Sol: Metin Logosu (PiAR SÜİT OTEL) */}
+          {/* Sol: Logo Görseli (PiAR SÜİT OTEL) */}
           <Link
-            href="/"
+            href="#anasayfa"
             onClick={closeMobileMenu}
-            className="group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.01]"
+            className="group flex items-center transition-transform duration-200 hover:scale-[1.03]"
+            aria-label="PiAR Süit Otel Anasayfa"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-secondary text-primary flex items-center justify-center font-serif text-base sm:text-lg font-bold border border-primary/50 shadow-sm transition-colors group-hover:border-primary">
-              P
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg sm:text-xl font-bold tracking-wider text-white drop-shadow-sm leading-none">
-                PiAR SÜİT OTEL
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-primary font-semibold mt-0.5">
-                Lüks Konaklama
-              </span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="PiAR Süit Otel Elazığ"
+              width={160}
+              height={48}
+              priority
+              className="h-8 sm:h-10 w-auto object-contain drop-shadow"
+            />
           </Link>
 
           {/* Sağ: Masaüstü Navigasyon Linkleri (Yalnızca Türkçe) */}
@@ -95,7 +94,7 @@ export default function Header() {
 
             {/* Rezervasyon Aksiyon Butonu */}
             <Link
-              href="#suitler"
+              href="#iletisim"
               className="bg-primary hover:bg-primary-dark text-secondary font-semibold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 border border-primary-light/40"
             >
               Rezervasyon Yap
@@ -171,7 +170,7 @@ export default function Header() {
 
             <div className="pt-3">
               <Link
-                href="#suitler"
+                href="#iletisim"
                 onClick={closeMobileMenu}
                 className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-secondary font-semibold text-sm uppercase tracking-wider py-3 px-6 rounded-full transition-all shadow-md active:scale-98"
               >

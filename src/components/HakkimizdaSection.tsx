@@ -7,7 +7,7 @@ export default function HakkimizdaSection() {
   return (
     <section
       id="hakkimizda"
-      className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden"
+      className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         {/* Split Layout: Sol Görsel (Fade-in), Sağ Metin (Fade-up) */}
