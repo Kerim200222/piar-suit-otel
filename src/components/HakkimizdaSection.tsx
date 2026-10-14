@@ -23,13 +23,14 @@ export default function HakkimizdaSection() {
             {/* Dekoratif Arka Plan Çerçevesi */}
             <div className="absolute -inset-4 sm:-inset-6 rounded-3xl bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent -z-10 transform -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
 
-            <div className="relative h-[380px] sm:h-[480px] lg:h-[540px] w-full rounded-2xl overflow-hidden shadow-2xl border border-secondary/10">
+            <div className="relative h-[420px] sm:h-[500px] lg:h-[560px] w-full rounded-2xl overflow-hidden shadow-2xl border border-secondary/10 bg-secondary/10">
               <Image
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85"
-                alt="PiAR Süit Otel Lüks Lobi ve Karşılama Alanı"
+                src="/images/about-hotel.jpg"
+                alt="PiAR Süit Otel İç Mekan ve Konaklama Alanları"
                 fill
                 className="object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>

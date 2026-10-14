@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-primary border-t border-primary/20">
+    <footer className="bg-secondary text-gray-300 border-t border-primary/20">
       {/* Ana Footer Alanı (3 Kolon) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
@@ -19,17 +19,17 @@ export default function Footer() {
                 <h3 className="font-serif text-2xl font-bold tracking-wider text-primary">
                   PiAR SÜİT OTEL
                 </h3>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-primary/75 font-semibold">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-primary/80 font-semibold">
                   Lüks & Konfor
                 </span>
               </div>
             </div>
 
-            <p className="text-sm text-primary/80 leading-relaxed font-sans max-w-sm">
+            <p className="text-sm text-gray-300 leading-relaxed font-sans max-w-sm">
               Elazığ&apos;ın kalbinde, modern mimari ve geleneksel misafirperverliğin buluştuğu eşsiz bir konaklama deneyimi. Size özel lüks süitlerimizde huzuru keşfedin.
             </p>
 
-            <div className="pt-2 flex items-center gap-3 text-xs text-primary/70">
+            <div className="pt-2 flex items-center gap-3 text-xs text-gray-400">
               <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span>7/24 Kesintisiz Resepsiyon & Hizmet</span>
             </div>
@@ -44,9 +44,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="#anasayfa"
-                  className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
-                  <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xs text-primary transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
                   <span>Anasayfa</span>
@@ -55,9 +55,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="#hakkimizda"
-                  className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
-                  <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xs text-primary transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
                   <span>Hakkımızda</span>
@@ -66,9 +66,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="#hizmetler"
-                  className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
-                  <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xs text-primary transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
                   <span>Hizmetler & Ayrıcalıklar</span>
@@ -77,9 +77,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="#galeri"
-                  className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
-                  <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xs text-primary transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
                   <span>Fotoğraf Galerisi</span>
@@ -88,9 +88,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="#iletisim"
-                  className="text-primary/80 hover:text-white transition-colors duration-200 inline-flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 inline-flex items-center gap-2 group"
                 >
-                  <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xs text-primary transition-transform duration-200 group-hover:translate-x-1">
                     ›
                   </span>
                   <span>İletişim & Rezervasyon</span>
@@ -104,7 +104,7 @@ export default function Footer() {
             <h4 className="font-serif text-lg font-semibold text-primary uppercase tracking-wider relative inline-block after:block after:w-10 after:h-[2px] after:bg-primary after:mt-1">
               İletişim
             </h4>
-            <div className="space-y-3.5 text-sm font-sans text-primary/85">
+            <div className="space-y-3.5 text-sm font-sans text-gray-300">
               {/* Adres */}
               <div className="flex items-start gap-3">
                 <svg
@@ -132,7 +132,7 @@ export default function Footer() {
                     href="https://maps.app.goo.gl/xMzkFVhqhuZ7vbFV8"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary/80 hover:text-white transition-colors leading-relaxed block"
+                    className="text-gray-300 hover:text-white transition-colors leading-relaxed block"
                   >
                     İzzet Paşa, Hacı Tevfik Efendi Sk. no:22, 23100 Elazığ Merkez/Elazığ
                   </a>
@@ -158,7 +158,7 @@ export default function Footer() {
                   <span className="font-semibold text-primary block">Telefon:</span>
                   <a
                     href="tel:+905308441723"
-                    className="text-primary/80 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     0530 844 17 23
                   </a>
@@ -184,7 +184,7 @@ export default function Footer() {
                   <span className="font-semibold text-primary block">E-Posta:</span>
                   <a
                     href="mailto:info@piarsuitotel.com"
-                    className="text-primary/80 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     info@piarsuitotel.com
                   </a>
@@ -193,7 +193,7 @@ export default function Footer() {
 
               {/* Sosyal Medya Butonları */}
               <div className="pt-2 border-t border-primary/15">
-                <span className="font-semibold text-primary block mb-2 text-xs uppercase tracking-wider text-primary/75">
+                <span className="font-semibold text-primary block mb-2 text-xs uppercase tracking-wider">
                   Sosyal Medya
                 </span>
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -201,7 +201,7 @@ export default function Footer() {
                     href="https://www.instagram.com/piarsuitotel/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-500 hover:border-primary rounded-lg text-xs font-medium text-primary hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
+                    className="inline-flex items-center justify-between gap-2.5 px-3.5 py-2 border border-gray-600 hover:border-primary rounded-lg text-xs font-medium text-gray-300 hover:text-white bg-transparent hover:bg-white/5 transition-all duration-200 group"
                   >
                     <span>Instagram</span>
                     <ExternalLink className="w-3.5 h-3.5 text-primary/70 group-hover:text-primary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -214,10 +214,24 @@ export default function Footer() {
       </div>
 
       {/* Alt Telif Hakkı (Copyright) Şeridi */}
-      <div className="border-t border-primary/15 bg-black/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary/70 font-sans text-center sm:text-left">
-          <p>© {currentYear} PiAR SÜİT OTEL. Tüm hakları saklıdır.</p>
-          <p className="tracking-wide">Lüks, Zarafet ve Konforun Elazığ&apos;daki Adresi</p>
+      <div className="border-t border-primary/15 bg-black/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col items-center gap-4 text-xs text-gray-400 font-sans">
+          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <p>© {currentYear} PiAR SÜİT OTEL. Tüm hakları saklıdır.</p>
+            <p className="tracking-wide text-gray-400">Lüks, Zarafet ve Konforun Elazığ&apos;daki Adresi</p>
+          </div>
+
+          {/* Geliştirici İmzası (MMA Medya Reklam) */}
+          <div className="w-full pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://www.instagram.com/mmamedyareklam/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-400 hover:text-primary transition-all duration-200 inline-block font-sans hover:underline underline-offset-4 tracking-wide"
+            >
+              Web sitesi MMA Medya Reklam tarafından geliştirilmiştir
+            </a>
+          </div>
         </div>
       </div>
     </footer>
