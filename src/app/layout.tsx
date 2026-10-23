@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -89,6 +90,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${playfair.variable} ${jakarta.variable} scroll-smooth`}>
+      <head>
+        {/* Google Tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18532466691"
+        />
+        <Script
+          id="google-tag-init"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18532466691');
+          `}
+        </Script>
+      </head>
       <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col">
         <Header />
         <div className="flex-1">{children}</div>
